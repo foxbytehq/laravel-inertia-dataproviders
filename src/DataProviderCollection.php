@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Webfox\InertiaDataProviders;
+namespace Foxbyte\InertiaDataProviders;
 
 use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Support\Arr;

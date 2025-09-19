@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Webfox\InertiaDataProviders;
+namespace Foxbyte\InertiaDataProviders;
 
 use Closure;
 use Illuminate\Contracts\Support\Arrayable;
@@ -15,7 +15,7 @@ use ReflectionMethod;
 use ReflectionNamedType;
 use ReflectionProperty;
 use Symfony\Component\VarDumper\VarDumper;
-use Webfox\InertiaDataProviders\AttributeNameFormatters\AttributeNameFormatter;
+use Foxbyte\InertiaDataProviders\AttributeNameFormatters\AttributeNameFormatter;
 
 abstract class DataProvider implements Arrayable, Jsonable
 {

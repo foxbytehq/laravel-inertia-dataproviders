@@ -1,20 +1,23 @@
 {
-    "name": "webfox/laravel-inertia-dataproviders",
+    "name": "foxbytehq/laravel-inertia-dataproviders",
     "description": "Data providers to encapsulate logic for Inertia views",
     "keywords": [
-        "webfox",
+        "foxbytehq",
         "laravel",
         "inertia"
     ],
-    "homepage": "https://github.com/webfox/laravel-inertia-dataproviders",
+    "homepage": "https://github.com/foxbytehq/laravel-inertia-dataproviders",
     "license": "MIT",
     "authors": [
         {
-            "name": "Webfox Developments Ltd",
-            "email": "developers@webfox.co.nz",
+            "name": "Foxbyte Ltd",
+            "email": "devops@foxbyte.nz",
             "role": "Developer"
         }
     ],
+    "replace": {
+        "webfox/laravel-inertia-dataproviders": "*"
+    },
     "suggest": {
         "inertiajs/inertia-laravel": "Needed for basic inertia functionality"
     },
@@ -38,12 +41,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Webfox\\InertiaDataProviders\\": "src"
+            "Foxbyte\\InertiaDataProviders\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Webfox\\InertiaDataProviders\\Tests\\": "tests"
+            "Foxbyte\\InertiaDataProviders\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -61,7 +64,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Webfox\\InertiaDataProviders\\InertiaDataProvidersServiceProvider"
+                "Foxbyte\\InertiaDataProviders\\InertiaDataProvidersServiceProvider"
             ]
         }
     },

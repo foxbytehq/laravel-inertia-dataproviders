@@ -2,6 +2,20 @@
 
 All notable changes to `laravel-inertia-dataproviders` will be documented in this file.
 
+## v3.0.0 Company Rebrand - 2025-09-19
+
+### What's Changed
+
+Complete rebranding of the package from Webfox to Foxbyte (our new company name!).
+
+### Migration Path
+
+1. Update your `composer.json` to use the new foxbytehq/laravel-inertia-dataproviders package name
+2. Run `composer update`
+3. Updating namespace imports in your code from `Webfox\InertiaDataProviders` to `Foxbyte\InertiaDataProviders`
+
+**Full Changelog**: https://github.com/foxbytehq/laravel-inertia-dataproviders/compare/v2.2.0...v3.0.0
+
 ## v2.2.0 - 2025-04-30
 
 ### What's Changed

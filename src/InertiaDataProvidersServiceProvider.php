@@ -1,6 +1,6 @@
 <?php
 
-namespace Webfox\InertiaDataProviders;
+namespace Foxbyte\InertiaDataProviders;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;

@@ -1,7 +1,7 @@
 # Laravel Data Providers for Inertia.js
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/webfox/laravel-inertia-dataproviders.svg?style=flat-square)](https://packagist.org/packages/webfox/laravel-inertia-dataproviders)
-[![Total Downloads](https://img.shields.io/packagist/dt/webfox/laravel-inertia-dataproviders.svg?style=flat-square)](https://packagist.org/packages/webfox/laravel-inertia-dataproviders)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/foxbytehq/laravel-inertia-dataproviders.svg?style=flat-square)](https://packagist.org/packages/foxbytehq/laravel-inertia-dataproviders)
+[![Total Downloads](https://img.shields.io/packagist/dt/foxbytehq/laravel-inertia-dataproviders.svg?style=flat-square)](https://packagist.org/packages/foxbytehq/laravel-inertia-dataproviders)
 
 Data providers encapsulate logic for Inertia views, keep your controllers clean and simple.
 
@@ -10,13 +10,13 @@ Data providers encapsulate logic for Inertia views, keep your controllers clean 
 Install this package via composer:
 
 ```bash
-composer require webfox/laravel-inertia-dataproviders
+composer require foxbytehq/laravel-inertia-dataproviders
 ```
 
 Optionally publish the configuration file:
 
 ```bash
-php artisan vendor:publish --provider="Webfox\InertiaDataProviders\InertiaDataProvidersServiceProvider"
+php artisan vendor:publish --provider="Foxbyte\InertiaDataProviders\InertiaDataProvidersServiceProvider"
 ````
 
 We assume you've already got the Inertia adapter for Laravel installed.
@@ -99,7 +99,7 @@ namespace App\Http\DataProviders;
 
 use Inertia\LazyProp;
 use App\Services\InjectedDependency;
-use Webfox\InertiaDataProviders\DataProvider;
+use Foxbyte\InertiaDataProviders\DataProvider;
 
 class DemoDataProvider extends DataProvider
 {
@@ -123,7 +123,7 @@ namespace App\Http\DataProviders;
 use Inertia\DeferProp;
 use Inertia\LazyProp;
 use App\Services\InjectedDependency;
-use Webfox\InertiaDataProviders\DataProvider;
+use Foxbyte\InertiaDataProviders\DataProvider;
 
 class DemoDataProvider extends DataProvider
 {
@@ -303,7 +303,7 @@ class DemoController extends Controller
 
 ## Attribute Name Formatting
 The attribute name format can be configured in the configuration file by setting the `attribute_name_formatter`.  
-The package ships with three formatters under the namespace `\Webfox\InertiaDataProviders\AttributeNameFormatters` but you are free to create your own.
+The package ships with three formatters under the namespace `\Foxbyte\InertiaDataProviders\AttributeNameFormatters` but you are free to create your own.
 
 ### AsWritten
 This is the default formatter. The output attribute name will be the same as the input name.

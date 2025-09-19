@@ -1,6 +1,6 @@
 <?php
 
-namespace Webfox\InertiaDataProviders\AttributeNameFormatters;
+namespace Foxbyte\InertiaDataProviders\AttributeNameFormatters;
 
 class AsWritten implements AttributeNameFormatter
 {

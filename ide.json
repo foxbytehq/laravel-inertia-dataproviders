@@ -2,7 +2,7 @@
   "$schema": "https://laravel-ide.com/schema/laravel-ide-v2.json",
   "codeGenerations": [
     {
-      "id": "webfox.create-inertia-data-provider",
+      "id": "foxbyte.create-inertia-data-provider",
       "name": "Create Inertia Data Provider",
       "classSuffix": "DataProvider",
       "files": [

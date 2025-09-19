@@ -1,6 +1,6 @@
 <?php
 
-namespace Webfox\InertiaDataProviders;
+namespace Foxbyte\InertiaDataProviders;
 
 use Illuminate\Console\GeneratorCommand;
 use Symfony\Component\Console\Attribute\AsCommand;

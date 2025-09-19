@@ -2,7 +2,7 @@
 
 namespace {{ namespace }};
 
-use Webfox\InertiaDataProviders\DataProvider;
+use Foxbyte\InertiaDataProviders\DataProvider;
 
 class {{ class }} extends DataProvider
 {

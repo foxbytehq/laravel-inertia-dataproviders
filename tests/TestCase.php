@@ -2,9 +2,9 @@
 
 namespace Foxbyte\InertiaDataProviders\Tests;
 
+use Foxbyte\InertiaDataProviders\InertiaDataProvidersServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use Foxbyte\InertiaDataProviders\InertiaDataProvidersServiceProvider;
 
 class TestCase extends Orchestra
 {

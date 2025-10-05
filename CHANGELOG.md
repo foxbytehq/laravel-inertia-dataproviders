@@ -2,6 +2,14 @@
 
 All notable changes to `laravel-inertia-dataproviders` will be documented in this file.
 
+## v3.1.0 Release - 2025-10-05
+
+### What's Changed
+
+* Add support for Inertia optional props by @hailwood in https://github.com/foxbytehq/laravel-inertia-dataproviders/pull/33
+
+**Full Changelog**: https://github.com/foxbytehq/laravel-inertia-dataproviders/compare/v3.0.0...v3.1.0
+
 ## v3.0.0 Company Rebrand - 2025-09-19
 
 ### What's Changed

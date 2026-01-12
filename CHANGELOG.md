@@ -2,6 +2,14 @@
 
 All notable changes to `laravel-inertia-dataproviders` will be documented in this file.
 
+## v3.2.0 release - 2026-01-12
+
+### What's Changed
+
+* Add ScrollProp support by @hailwood in https://github.com/foxbytehq/laravel-inertia-dataproviders/pull/37
+
+**Full Changelog**: https://github.com/foxbytehq/laravel-inertia-dataproviders/compare/v3.1.0...v3.2.0
+
 ## v3.1.0 Release - 2025-10-05
 
 ### What's Changed

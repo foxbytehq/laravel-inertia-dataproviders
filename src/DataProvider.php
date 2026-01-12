@@ -8,10 +8,13 @@ use Closure;
 use Foxbyte\InertiaDataProviders\AttributeNameFormatters\AttributeNameFormatter;
 use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Contracts\Support\Jsonable;
+use Inertia\AlwaysProp;
 use Inertia\DeferProp;
 use Inertia\LazyProp;
+use Inertia\OnceProp;
 use Inertia\OptionalProp;
 use Inertia\Response;
+use Inertia\ScrollProp;
 use ReflectionClass;
 use ReflectionMethod;
 use ReflectionNamedType;
@@ -24,6 +27,16 @@ abstract class DataProvider implements Arrayable, Jsonable
 
     protected array $excludedMethods = ['__construct', 'toArray', 'toNestedArray', 'toJson', 'dd', 'dump',];
 
+    protected array $nativeReturnTypes = [
+        AlwaysProp::class,
+        Closure::class,
+        DeferProp::class,
+        LazyProp::class,
+        OnceProp::class,
+        OptionalProp::class,
+        ScrollProp::class,
+    ];
+
     public static function collection(DataProvider|array ...$dataProviders): DataProviderCollection
     {
         return new DataProviderCollection(...$dataProviders);
@@ -32,7 +45,7 @@ abstract class DataProvider implements Arrayable, Jsonable
     public function toArray(): array
     {
         $staticData = $this->staticData instanceof Arrayable ? $this->staticData->toArray() : $this->staticData;
-        $reflectionClass = (new ReflectionClass($this));
+        $reflectionClass = new ReflectionClass($this);
 
         $convertedProperties = collect($reflectionClass->getProperties(ReflectionProperty::IS_PUBLIC))
             ->filter(fn (ReflectionProperty $property) => ! $property->isStatic())
@@ -43,7 +56,8 @@ abstract class DataProvider implements Arrayable, Jsonable
             ->filter(fn (ReflectionMethod $method) => ! $method->isStatic() && ! in_array($method->name, $this->excludedMethods))
             ->mapWithKeys(function (ReflectionMethod $method) {
                 $returnType = $method->getReturnType();
-                if ($returnType instanceof ReflectionNamedType && in_array($returnType->getName(), [DeferProp::class, LazyProp::class, OptionalProp::class, Closure::class])) {
+
+                if ($returnType instanceof ReflectionNamedType && in_array($returnType->getName(), $this->nativeReturnTypes)) {
                     return [$method->name => $method->invoke($this)];
                 }
 

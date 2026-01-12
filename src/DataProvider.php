@@ -11,6 +11,7 @@ use Illuminate\Contracts\Support\Jsonable;
 use Inertia\AlwaysProp;
 use Inertia\DeferProp;
 use Inertia\LazyProp;
+use Inertia\OnceProp;
 use Inertia\OptionalProp;
 use Inertia\Response;
 use Inertia\ScrollProp;
@@ -25,6 +26,16 @@ abstract class DataProvider implements Arrayable, Jsonable
     protected array|Arrayable $staticData = [];
 
     protected array $excludedMethods = ['__construct', 'toArray', 'toNestedArray', 'toJson', 'dd', 'dump',];
+
+    protected array $nativeReturnTypes = [
+        AlwaysProp::class,
+        Closure::class,
+        DeferProp::class,
+        LazyProp::class,
+        OnceProp::class,
+        OptionalProp::class,
+        ScrollProp::class,
+    ];
 
     public static function collection(DataProvider|array ...$dataProviders): DataProviderCollection
     {
@@ -41,22 +52,12 @@ abstract class DataProvider implements Arrayable, Jsonable
             ->mapWithKeys(fn (ReflectionProperty $property) => [$property->getName() => $property->getValue($this)])
             ->map(fn ($value) => $value instanceof Arrayable ? $value->toArray() : $value);
 
-        $specialReturnTypes = [
-            AlwaysProp::class,
-            Closure::class,
-            DeferProp::class,
-            LazyProp::class,
-            OnceProp::class,
-            OptionalProp::class,
-            ScrollProp::class,
-        ];
-
         $convertedMethods = collect($reflectionClass->getMethods(ReflectionMethod::IS_PUBLIC))
             ->filter(fn (ReflectionMethod $method) => ! $method->isStatic() && ! in_array($method->name, $this->excludedMethods))
-            ->mapWithKeys(function (ReflectionMethod $method) use ($specialReturnTypes) {
+            ->mapWithKeys(function (ReflectionMethod $method) {
                 $returnType = $method->getReturnType();
 
-                if ($returnType instanceof ReflectionNamedType && in_array($returnType->getName(), $specialReturnTypes)) {
+                if ($returnType instanceof ReflectionNamedType && in_array($returnType->getName(), $this->nativeReturnTypes)) {
                     return [$method->name => $method->invoke($this)];
                 }
 

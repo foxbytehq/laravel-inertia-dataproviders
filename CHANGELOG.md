@@ -2,6 +2,15 @@
 
 All notable changes to `laravel-inertia-dataproviders` will be documented in this file.
 
+## v3.3.0 release - 2026-02-02
+
+### What's Changed
+
+* Add Claude Code GitHub Workflow by @hailwood in https://github.com/foxbytehq/laravel-inertia-dataproviders/pull/39
+* Add Laravel Boost skill for data providers by @hailwood in https://github.com/foxbytehq/laravel-inertia-dataproviders/pull/38
+
+**Full Changelog**: https://github.com/foxbytehq/laravel-inertia-dataproviders/compare/v3.2.0...v3.3.0
+
 ## v3.2.0 release - 2026-01-12
 
 ### What's Changed

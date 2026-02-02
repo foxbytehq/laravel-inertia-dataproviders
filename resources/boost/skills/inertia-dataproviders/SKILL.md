@@ -23,7 +23,9 @@ Creates `app/Http/DataProviders/UserProfileDataProvider.php`.
 
 namespace App\Http\DataProviders;
 
+use App\Repositories\UserRepository;
 use Foxbyte\InertiaDataProviders\DataProvider;
+use Illuminate\Database\Eloquent\Model;
 
 class ExampleDataProvider extends DataProvider
 {
@@ -71,11 +73,21 @@ return Inertia::render('Posts/Show', [
 ## Inertia Prop Types
 
 ```php
-use Inertia\Inertia;
+use App\Models\Post;
 use Closure;
+use Foxbyte\InertiaDataProviders\DataProvider;
+use Inertia\AlwaysProp;
+use Inertia\DeferProp;
+use Inertia\Inertia;
+use Inertia\LazyProp;
+use Inertia\OnceProp;
 
 class PostDataProvider extends DataProvider
 {
+    public function __construct(public Post $post)
+    {
+    }
+
     // DeferProp - loaded after initial page render
     public function comments(): DeferProp
     {

@@ -15,6 +15,18 @@ class InertiaDataProviderMakeCommand extends GeneratorCommand
 
     protected $type = 'Inertia Data Provider';
 
+    public function handle()
+    {
+        if ((! $this->hasOption('force') || ! $this->option('force')) &&
+            $this->alreadyExists($this->getNameInput())) {
+            $this->components->error($this->type.' already exists.');
+
+            return self::FAILURE;
+        }
+
+        return parent::handle();
+    }
+
     protected function alreadyExists($rawName)
     {
         return class_exists($rawName) ||

@@ -27,7 +27,7 @@
         "illuminate/contracts": "^12.0|^13.0"
     },
     "require-dev": {
-        "inertiajs/inertia-laravel": "^2.0",
+        "inertiajs/inertia-laravel": "^2.0.15",
         "jetbrains/phpstorm-attributes": "^1.0",
         "nunomaduro/collision": "^8.9.1",
         "orchestra/testbench": "^10.0|^11.0",

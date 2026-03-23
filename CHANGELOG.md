@@ -2,6 +2,14 @@
 
 All notable changes to `laravel-inertia-dataproviders` will be documented in this file.
 
+## v4.0.0 Release - 2026-03-23
+
+### What's Changed
+
+* Upgrade to Laravel 13 with comprehensive test suite by @hailwood in https://github.com/foxbytehq/laravel-inertia-dataproviders/pull/42
+
+**Full Changelog**: https://github.com/foxbytehq/laravel-inertia-dataproviders/compare/v3.3.0...v4.0.0
+
 ## v3.3.0 release - 2026-02-02
 
 ### What's Changed

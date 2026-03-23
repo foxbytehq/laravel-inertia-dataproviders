@@ -11,6 +11,7 @@ use Illuminate\Contracts\Support\Jsonable;
 use Inertia\AlwaysProp;
 use Inertia\DeferProp;
 use Inertia\LazyProp;
+use Inertia\MergeProp;
 use Inertia\OnceProp;
 use Inertia\OptionalProp;
 use Inertia\Response;
@@ -32,6 +33,7 @@ abstract class DataProvider implements Arrayable, Jsonable
         Closure::class,
         DeferProp::class,
         LazyProp::class,
+        MergeProp::class,
         OnceProp::class,
         OptionalProp::class,
         ScrollProp::class,
